@@ -1,0 +1,15 @@
+Useful gift memo:
+
+Replace a git branch by another:
+This effectively replace all files in master by the files from mybranch
+git checkout mybranch
+git merge -s ours master
+git checkout master
+git merge mybranch
+
+
+List all programs installed on a computer:
+dpkg --get-selections > list.txt
+
+Install all programs from a txt file:
+sudo dpkg --set-selections < list.txt && sudo apt-get -u dselect-upgrade
