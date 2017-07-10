@@ -31,3 +31,9 @@ Alt-space => t
 
 Singleton design pattern allows access to a class from anywhere in any class.
 (http://stackoverflow.com/questions/1008019/c-singleton-design-pattern)
+
+Change Okular thingies: qtconfig-qt4
+
+Obtain the translation of an english word
+dict -d fd-eng-fra mot
+

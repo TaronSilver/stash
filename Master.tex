@@ -1,50 +1,63 @@
 \usepackage{amsmath, amssymb}
 \usepackage{mathrsfs, mathtools}
+%\usepackage{commath}
 \usepackage{xfrac} %small fractions on the side
 \usepackage{bigstrut} %better struct and math symbols
-\usepackage{tabularx}
+\usepackage{tabularx, multirow}
 \usepackage{wrapfig, caption, graphicx}
 \usepackage[font=small,labelfont=bf]{caption}
 \usepackage{subfiles}
-\usepackage{color, lipsum}
+\usepackage{xcolor, lipsum}
 \usepackage{enumitem}
 \usepackage{titlesec}
+\usepackage{times} %Change font
 \usepackage[T1]{fontenc}
 \usepackage[makeroom]{cancel} %\cancel command fro striking text
+\usepackage{indentfirst}
 \usepackage[utf8]{inputenc}
 
 \usepackage[bottom]{footmisc}
 \usepackage[linewidth=1.2pt,linecolor=black]{mdframed}
 \usepackage[font=small,labelfont=bf]{caption}
-\usepackage{parskip}
+\usepackage{perpage}
+
+%\usepackage{geometry}
+%\geometry{legalpaper, margin=1cm}
+
+\MakePerPage{footnote} %Resets the footnote numberin on each page!
+% \usepackage{parskip}
 
 
-\newcommand{\myframe}[1]{
+%\newcommand{\myframe}[1]{
 
-\begin{mdframed}
-\begin{minipage}{\textwidth}
-  #1
-\end{minipage}
-\end{mdframed}
-}
+%\begin{mdframed}
+%\begin{minipage}{\textwidth}
+%  #1
+%\end{minipage}
+%\end{mdframed}
+%}
 
 \newcommand{\dpartial}[2]{\dfrac{\partial #1}{\partial #2}}
 
 \newcommand{\mathcolorbox}[2]{\colorbox{#1}{$\displaystyle #2$}}
 
+\newcommand{\F}[0]{\mathscr{F}}
+
+\newcommand{\FunDom}[3]{$#1:\mathbb{#2}\to\mathbb{#3}$}
+
 \newcommand{\todo}[1]{\marginpar{\mbox{\textbf{#1}}}}
 
-\newcommand{\const}{\textrm{const}}
+\newcommand{\const}{\text{const}}
 
-\newcommand{\graph}[1]{\includegraphics[width=\textwidth]{#1}}
+\newcommand{\graph}[1]{\begin{center}\includegraphics[width=\textwidth]{#1}\end{center}}
 
-%Allows to preserve indentation in minipages!
-\setlength{\parskip}{\medskipamount}
-\makeatletter
-\newcommand{\@minipagerestore}{
-\setlength{\parindent}{15pt}
-\setlength{\parskip}{\medskipamount}}
-\makeatother
+% Allows to preserve indentation in minipages!
+%\setlength{\parskip}{\medskipamount}
+%\makeatletter
+%\newcommand{\@minipagerestore}{
+%\setlength{\parindent}{15pt}
+%\setlength{\parskip}{\medskipamount}}
+%\makeatother
 
 %Make paragraph behave as a "subsubsubsection"
 \titleformat{\paragraph}
