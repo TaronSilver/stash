@@ -1,39 +1,95 @@
-Useful gift memo:
-
 Replace a git branch by another:
 This effectively replace all files in master by the files from mybranch
-git checkout mybranch
-git merge -s ours master
-git checkout master
-git merge mybranch
+	git checkout mybranch
+	git merge -s ours master
+	git checkout master
+	git merge mybranch
 
 
 List all programs installed on a computer:
-dpkg --get-selections > list.txt
+	dpkg --get-selections > list.txt
 
 Install all programs from a txt file:
-sudo dpkg --set-selections < list.txt && sudo apt-get -u dselect-upgrade
+	sudo dpkg --set-selections < list.txt && sudo apt-get -u dselect-upgrade
 
 List all atom packages installed on a computer:
-apm list --installed --bare > package-list.txt
+	apm list --installed --bare > package-list.txt
 
 Install all atom plugins from a list:
-apm install --packages-file package-list.txt
+	apm install --packages-file package-list.txt
 
 Show the current directory:
-pwd
+	pwd
 
-Show files modified in latest commit 
-git show --stat
+Show files modified in latest commit :
+	git show --stat
 
-Put a window always on top
-Alt-space => t
+Put a window always on top:
+	Alt-space => t
 
-Singleton design pattern allows access to a class from anywhere in any class.
-(http://stackoverflow.com/questions/1008019/c-singleton-design-pattern)
+Singleton design pattern allows access to a class from anywhere in any class:
+	(http://stackoverflow.com/questions/1008019/c-singleton-design-pattern)
 
-Change Okular thingies: qtconfig-qt4
+Change Okular thingies:
+	qtconfig-qt4
 
-Obtain the translation of an english word
-dict -d fd-eng-fra mot
+Obtain the translation of an english word:
+	dict -d fd-eng-fra mot
 
+Encrypt a file:
+	gpg -c myfinancial.info.txt
+Decrypt a file:
+	gpg -d myfinancial.info.txt.gpg
+
+Update "locate" command:
+	sudo updatedb
+
+Chage webp to png:
+	find . -name "*.webp" | xargs -I {} dwebp {} -o {}.png
+
+Change uubntu login screen dots:
+	xhost +SI:localuser:lightdm
+	sudo su lightdm -s /bin/bash
+	dconf-editor
+
+	navigate to
+
+	com/canonical/unity-greeter
+
+	set draw-grid to false
+
+Toggle volume from command line:
+    amixer -D pulse set Master +1 toggle
+Change volume level:
+    amixer -D pulse sset Master 20%+
+
+Disable touchpad
+    xinput list
+    xinput --disable xx
+
+Merge all pdf in a folder
+    pdftk *.pdf output name.pdf
+
+Convert all .doc to .pdf
+    for FILE in *.doc ; do unoconv "$FILE" ; done
+
+Return the current location in a command line
+    cp /home/archangel/Templates/latex.tex $PWD/newfile.tex
+
+Lookup a keyword in the man pages:
+    apropos Stallman
+
+Restart KDE5 Plasma
+    kquitapp5 plasmashell && kstart plasmashell
+    killall plasma-desktop && kstart plasma-desktop
+    sudo service sddm stop
+
+Change the wallpaper based on the hour, in "sudo crontab -e":
+    * * * * * su archangel -c "DISPLAY=:0.0 $(which python3) /home/archangel/Pictures/DrWho/DrWho.py"
+
+Give information on commands website
+    tldr.sh (yes, a website)
+    cheat.sh (yes, a website)
+
+List the new name of files after removing the first 4 characters (remove -n to apply changes):
+    rename -n 's/.{4}(.*)/$1/' *.
